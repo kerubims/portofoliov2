@@ -48,4 +48,5 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]
+# Batasi penggunaan RAM Node.js maksimal ke ~256MB agar ramah VPS
+CMD ["node", "--max-old-space-size=256", "server.js"]
