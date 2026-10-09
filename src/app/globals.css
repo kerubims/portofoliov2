@@ -781,22 +781,12 @@ video {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: calc(max(var(--gutter), calc((100vw - 1200px) / 2)) + min(380px, 78vw));
+  box-sizing: border-box;
+  width: calc(max(var(--gutter), calc((100vw - 1200px) / 2)) + min(380px, 78vw) + 24px);
   padding-left: max(var(--gutter), calc((100vw - 1200px) / 2));
   padding-right: 24px;
   background: #f1efec;
-  z-index: 10;
-}
-
-.work__intro::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 120px;
-  height: 100%;
-  background: linear-gradient(to right, #f1efec 0%, transparent 100%);
-  pointer-events: none;
+  z-index: 20;
 }
 
 .work__title {
@@ -1332,6 +1322,8 @@ video {
   }
 
   .work__head {
+    position: relative;
+    z-index: 30;
     padding-bottom: 24px;
     padding-inline: var(--gutter);
   }
@@ -1354,21 +1346,17 @@ video {
 
   .work__intro {
     position: sticky;
-    top: 80px; /* Adjust this value if it overlaps with your top navigation */
+    top: 0;
     width: 100%;
     height: auto;
+    box-sizing: border-box;
     padding-right: var(--gutter);
-    padding-top: 16px;
+    padding-top: 96px;
     padding-bottom: 24px;
+    margin-top: -80px;
     margin-bottom: 0;
-  }
-
-  .work__intro::after {
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(to bottom, #f1efec 0%, transparent 100%);
+    background: #f1efec;
+    z-index: 20;
   }
 
   .project {
