@@ -65,6 +65,7 @@ export default function CursorTrail() {
     }
 
     const onPointerDown = (e: PointerEvent) => {
+      if (window.innerWidth < 900) return;
       if (e.button !== 0) return;
       pressed = true;
       lastX = e.clientX;
@@ -74,6 +75,7 @@ export default function CursorTrail() {
     };
 
     const onPointerMove = (e: PointerEvent) => {
+      if (window.innerWidth < 900) return;
       if (!pressed) return;
       const dx = e.clientX - lastX;
       const dy = e.clientY - lastY;
