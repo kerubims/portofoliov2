@@ -733,6 +733,13 @@ video {
   flex-direction: column;
 }
 
+.work__content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
 .work__head {
   display: flex;
   align-items: baseline;
@@ -761,14 +768,35 @@ video {
   align-items: center;
   gap: 28px;
   width: max-content;
-  padding-inline: max(var(--gutter), calc((100vw - 1200px) / 2));
+  padding-left: calc(max(var(--gutter), calc((100vw - 1200px) / 2)) + min(380px, 78vw) + 28px);
+  padding-right: max(var(--gutter), calc((100vw - 1200px) / 2));
   will-change: transform;
 }
 
 .work__intro {
-  flex: none;
-  width: min(380px, 78vw);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(max(var(--gutter), calc((100vw - 1200px) / 2)) + min(380px, 78vw));
+  padding-left: max(var(--gutter), calc((100vw - 1200px) / 2));
   padding-right: 24px;
+  background: #f1efec;
+  z-index: 10;
+}
+
+.work__intro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, #f1efec 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .work__title {
@@ -1308,19 +1336,39 @@ video {
     padding-inline: var(--gutter);
   }
 
+  .work__content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .work__track {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     gap: 40px;
     padding-bottom: 60px;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
     transform: none !important;
   }
 
   .work__intro {
+    position: sticky;
+    top: 80px; /* Adjust this value if it overlaps with your top navigation */
     width: 100%;
-    padding-right: 0;
-    margin-bottom: 24px;
+    height: auto;
+    padding-right: var(--gutter);
+    padding-top: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 0;
+  }
+
+  .work__intro::after {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, #f1efec 0%, transparent 100%);
   }
 
   .project {

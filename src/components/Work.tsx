@@ -79,11 +79,13 @@ export default function Work() {
           <p className="work__counter"><span>{String(current).padStart(2, "0")}</span> / 05</p>
         </div>
 
-        <div className="work__track" id="workTrack" ref={workTrackRef}>
+        <div className="work__content">
           <div className="work__intro">
             <h2 className="work__title">Selected<br />Projects</h2>
             <p>Scroll to explore a few favourites from the last couple of years.</p>
           </div>
+
+          <div className="work__track" id="workTrack" ref={workTrackRef}>
 
           <article className="project project--kopi">
             <div className="project__art"></div>
@@ -144,6 +146,7 @@ export default function Work() {
               <span className="project__year">2023</span>
             </div>
           </article>
+          </div>
         </div>
 
         <div className="work__progress" aria-hidden="true"><span id="workProgress" ref={workProgressRef}></span></div>
