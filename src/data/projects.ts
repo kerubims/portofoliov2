@@ -31,21 +31,21 @@ export const projects: Project[] = [
     thumbnail: "/assets/projects/sim-kerma.png",
     art: "/assets/projects/art_simkerma.jpg",
     description:
-      "Sistem informasi manajemen kerjasama lintas kementerian: rantai persetujuan, versioning dokumen, e-signature multi-pihak, audit trail.",
+      "Cross-ministry collaboration management information system: approval chains, document versioning, multi-party e-signature, audit trail.",
     techTags: ["Laravel 11", "MySQL", "WebSocket"],
     liveUrl: "https://kerjasama.ksm.web.id",
     features: [
       {
         title: "Dashboard Overview",
-        description: "Menampilkan metrik utama kerjasama, status dokumen, dan notifikasi persetujuan yang tertunda.",
+        description: "Displays key collaboration metrics, document status, and pending approval notifications.",
       },
       {
         title: "Document Versioning",
-        description: "Melacak setiap perubahan pada dokumen kerjasama, lengkap dengan riwayat siapa yang mengedit dan kapan.",
+        description: "Tracks every change made to collaboration documents, complete with a history of who edited it and when.",
       },
       {
         title: "Multi-party E-Signature",
-        description: "Integrasi tanda tangan elektronik yang memungkinkan penandatanganan sah oleh berbagai kementerian secara berurutan.",
+        description: "Electronic signature integration enabling sequential authorized signing by various ministries.",
       }
     ]
   },
@@ -60,16 +60,22 @@ export const projects: Project[] = [
     logo: "/assets/sendawar.png",
     art: "/assets/projects/art_polsen.jpg",
     description:
-      "Company profile resmi Politeknik Sendawar: profil, jurusan & akreditasi, berita & acara, kalender akademik, fasilitas, dan lowongan.",
+      "Official company profile for Politeknik Sendawar: profile, departments & accreditation, news & events, academic calendar, facilities, and careers.",
     techTags: ["Laravel 12", "Blade", "Tailwind CSS"],
+    liveUrl: "https://polsen.ac.id",
     features: [
       {
-        title: "Halaman Utama (Landing Page)",
-        description: "Menampilkan informasi sekilas tentang kampus, berita terbaru, dan tautan cepat ke program studi.",
+        title: "Main Landing Page",
+        description: "Displays quick information about the campus, latest news, and quick links to academic programs.",
+        image: "/assets/projects/polsen.png",
       },
       {
-        title: "Direktori Program Studi",
-        description: "Halaman detail untuk masing-masing jurusan, lengkap dengan kurikulum dan status akreditasi.",
+        title: "Study Programs Directory",
+        description: "Detailed page for each department, complete with curriculum and accreditation status.",
+      },
+      {
+        title: "News and Events",
+        description: "Information center for campus activities, academic seminars, and important announcements for students.",
       }
     ]
   },
@@ -83,17 +89,17 @@ export const projects: Project[] = [
     thumbnail: "/assets/projects/cvku.png",
     art: "/assets/projects/art_cvku.jpg",
     description:
-      "Pembuat CV berbasis AI: pemeriksa skor ATS dengan analisis gap kata kunci, editor CV terpandu, pustaka CV, dan asisten AI streaming.",
+      "AI-powered CV maker: ATS score checker with keyword gap analysis, guided CV editor, CV library, and streaming AI assistant.",
     techTags: ["Next.js", "AI SDK", "Docker"],
     liveUrl: "https://cvku.ksm.web.id",
     features: [
       {
         title: "ATS Resume Checker",
-        description: "Mengunggah CV dan mendapatkan analisis skor kesesuaian dengan lowongan kerja berdasarkan kata kunci.",
+        description: "Upload your CV and get a job matching score analysis based on keywords.",
       },
       {
         title: "AI Chat Assistant",
-        description: "Asisten cerdas yang membantu pengguna merumuskan pengalaman kerja dengan bahasa yang lebih profesional.",
+        description: "Smart assistant that helps users formulate their work experience using more professional language.",
       }
     ]
   },
@@ -106,16 +112,16 @@ export const projects: Project[] = [
     themeColor: "#f59e0b", // Amber
     thumbnail: "/assets/projects/sebatas-kopi.png",
     description:
-      "POS kedai kopi: menu, pelacakan pesanan, laporan harian, program member, dan alert stok. Dibangun untuk kecepatan.",
+      "Coffee shop POS: menu, order tracking, daily reports, membership program, and stock alerts. Built for speed.",
     techTags: ["Laravel 11", "Alpine.js", "MySQL"],
     features: [
       {
-        title: "Kasir (POS Interface)",
-        description: "Antarmuka kasir yang dioptimalkan untuk kecepatan input pesanan pelanggan dan kalkulasi pembayaran.",
+        title: "Cashier (POS Interface)",
+        description: "Cashier interface optimized for fast customer order input and payment calculation.",
       },
       {
-        title: "Manajemen Stok",
-        description: "Peringatan otomatis ketika bahan baku menipis untuk memastikan operasional kedai tidak terganggu.",
+        title: "Inventory Management",
+        description: "Automated alerts when raw materials run low to ensure uninterrupted shop operations.",
       }
     ]
   },
@@ -128,16 +134,16 @@ export const projects: Project[] = [
     themeColor: "#ef4444", // Red
     thumbnail: "/assets/projects/vespabox.png",
     description:
-      "Marketplace spare part Vespa dengan bidding realtime. Laravel Reverb WebSocket, broadcasting channel, diuji ribuan pengguna.",
+      "Vespa spare parts marketplace with real-time bidding. Laravel Reverb WebSocket, broadcasting channels, tested by thousands of users.",
     techTags: ["Laravel 11", "Reverb", "WebSocket"],
     features: [
       {
         title: "Live Bidding Room",
-        description: "Ruang lelang suku cadang langka dimana harga terupdate secara real-time tanpa perlu memuat ulang halaman.",
+        description: "Auction room for rare spare parts where prices are updated in real-time without reloading the page.",
       },
       {
         title: "Seller Dashboard",
-        description: "Panel bagi penjual untuk memantau aktivitas lelang, mengatur harga dasar, dan melihat riwayat transaksi.",
+        description: "Panel for sellers to monitor auction activity, set base prices, and view transaction history.",
       }
     ]
   }
