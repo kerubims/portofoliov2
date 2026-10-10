@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw assets / scripts
+/screenshot halaman
+/parse-screenshots.js
+/translate.js
+/convert.js
+/invert-colors.js
+/fix-interactivity.js
+/import-tailwind.js
+/detail-example.html
