@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Work() {
   const workRef = useRef<HTMLElement>(null);
@@ -86,66 +88,21 @@ export default function Work() {
           </div>
 
           <div className="work__track" id="workTrack" ref={workTrackRef}>
-
-          <article className="project project--kopi">
-            <div className="project__art"></div>
-            <span className="project__num">01</span>
-            <div className="project__info glass">
-              <div>
-                <h3 className="project__title">Kopi Senja</h3>
-                <p className="project__cat">Brand identity · Packaging</p>
-              </div>
-              <span className="project__year">2025</span>
-            </div>
-          </article>
-
-          <article className="project project--lumen">
-            <div className="project__art"></div>
-            <span className="project__num">02</span>
-            <div className="project__info glass">
-              <div>
-                <h3 className="project__title">Lumen Bank</h3>
-                <p className="project__cat">Mobile app · UI / UX</p>
-              </div>
-              <span className="project__year">2025</span>
-            </div>
-          </article>
-
-          <article className="project project--pixel">
-            <div className="project__art"></div>
-            <span className="project__num">03</span>
-            <div className="project__info glass">
-              <div>
-                <h3 className="project__title">Pixel Pals</h3>
-                <p className="project__cat">Full-stack web app · React</p>
-              </div>
-              <span className="project__year">2024</span>
-            </div>
-          </article>
-
-          <article className="project project--batik">
-            <div className="project__art"></div>
-            <span className="project__num">04</span>
-            <div className="project__info glass">
-              <div>
-                <h3 className="project__title">Batik Now</h3>
-                <p className="project__cat">Editorial · Art direction</p>
-              </div>
-              <span className="project__year">2024</span>
-            </div>
-          </article>
-
-          <article className="project project--orbit">
-            <div className="project__art"></div>
-            <span className="project__num">05</span>
-            <div className="project__info glass">
-              <div>
-                <h3 className="project__title">Orbit OS</h3>
-                <p className="project__cat">Product design · Web</p>
-              </div>
-              <span className="project__year">2023</span>
-            </div>
-          </article>
+            {projects.map((project, index) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`} className={`project project--${project.slug}`} style={{ display: "block" }}>
+                <article>
+                  <div className="project__art"></div>
+                  <span className="project__num">{String(index + 1).padStart(2, "0")}</span>
+                  <div className="project__info glass">
+                    <div>
+                      <h3 className="project__title">{project.title}</h3>
+                      <p className="project__cat">{project.category} · {project.status}</p>
+                    </div>
+                    <span className="project__year" style={{ color: project.themeColor }}>{project.techTags[0]}</span>
+                  </div>
+                </article>
+              </Link>
+            ))}
           </div>
         </div>
 

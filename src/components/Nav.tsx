@@ -44,11 +44,11 @@ export default function Nav() {
 
   return (
     <nav className={`nav glass ${isDark ? "nav--dark" : ""}`} aria-label="Main">
-      <Link className="nav__logo" href="#hero"><b>KERUBIM</b> <span>SM</span></Link>
+      <Link className="nav__logo" href="/#hero"><b>KERUBIM</b> <span>SM</span></Link>
       <ul className="nav__links">
-        <li><Link href="#about">About</Link></li>
-        <li><Link href="#work">Work</Link></li>
-        <li><Link href="#testimonials">Words</Link></li>
+        <li><Link href="/#about">About</Link></li>
+        <li><Link href="/#work">Work</Link></li>
+        <li><Link href="/#testimonials">Words</Link></li>
       </ul>
       <div className="nav__actions">
         <a 
@@ -61,7 +61,7 @@ export default function Nav() {
           <span className="nav__cv-text">Download CV</span>
           <span className="nav__cv-short">CV</span>
         </a>
-        <Link className="btn btn--light btn--sm" href="#contact">Contact</Link>
+        <Link className="btn btn--light btn--sm" href="/#contact">Contact</Link>
       </div>
     </nav>
   );
