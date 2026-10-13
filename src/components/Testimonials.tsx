@@ -11,42 +11,42 @@ export default function Testimonials() {
         <div className="quotes">
           <figure className="quote glass">
             <blockquote>
-              “Kerubim turned a tiny coffee cart into a brand people line up for. Every
-              touchpoint, from cups to signage, suddenly felt like us.”
+              “The POS and order management system built by Kerubim is blazing fast and
+              rock-solid. Peak-hour checkout runs smoothly, and automated daily sales reports save our team hours every day.”
             </blockquote>
             <figcaption className="quote__author">
-              <span className="quote__avatar" aria-hidden="true">AS</span>
+              <span className="quote__avatar" aria-hidden="true">RP</span>
               <span>
-                <span className="quote__name">Ayu Setiawan</span>
-                <span className="quote__role">Founder, Kopi Senja</span>
+                <span className="quote__name">Raka Pratama</span>
+                <span className="quote__role">Founder, SebatasKopi</span>
               </span>
             </figcaption>
           </figure>
 
           <figure className="quote glass">
             <blockquote>
-              “Rare mix of craft and clarity. Our app went from confusing to calm, and
-              the design system Kerubim left behind still saves us weeks.”
+              “SIM-KERMA completely transformed how we manage partnerships. Tracking approval
+              hierarchies, versioning MoU drafts, and multi-party e-signatures now happen in days instead of weeks.”
             </blockquote>
             <figcaption className="quote__author">
-              <span className="quote__avatar" aria-hidden="true">DL</span>
+              <span className="quote__avatar" aria-hidden="true">AW</span>
               <span>
-                <span className="quote__name">Daniel Lim</span>
-                <span className="quote__role">Head of Product, Lumen</span>
+                <span className="quote__name">Aris Wicaksono</span>
+                <span className="quote__role">Project Lead, SIM-KERMA</span>
               </span>
             </figcaption>
           </figure>
 
           <figure className="quote glass">
             <blockquote>
-              “The web application gave our launch a performance boost we couldn&apos;t have achieved on our
-              own. Fast, scalable and delivered ahead of schedule.”
+              “Our institutional portal has significantly elevated Politeknik Sendawar&apos;s digital presence.
+              From BAN-PT accreditation to SPMI quality assurance, everything is fast, accessible, and crystal clear.”
             </blockquote>
             <figcaption className="quote__author">
-              <span className="quote__avatar" aria-hidden="true">MR</span>
+              <span className="quote__avatar" aria-hidden="true">YB</span>
               <span>
-                <span className="quote__name">Maya Rahman</span>
-                <span className="quote__role">Creative Lead, Orbit</span>
+                <span className="quote__name">Dr. Yohanes Berchmans</span>
+                <span className="quote__role">Head of IT, Poltek Sendawar</span>
               </span>
             </figcaption>
           </figure>

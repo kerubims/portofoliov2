@@ -130,10 +130,12 @@ export default function About() {
         </p>
         <ul className="about__tags">
           <li className="tag">Web Development</li>
+          <li className="tag">Laravel</li>
+          <li className="tag">React / Next.js</li>
+          <li className="tag">Docker</li>
           <li className="tag">LLM Integration</li>
           <li className="tag">Linux Server</li>
           <li className="tag">IT Support</li>
-          <li className="tag">React / Next.js</li>
         </ul>
       </div>
     </section>
