@@ -85,6 +85,27 @@ export default function Hero() {
 
       <div className="hero__shade" aria-hidden="true"></div>
 
+      {/* Floating Mascots Layer (between video and KERUBIM text) */}
+      <div className="hero__mascots" aria-hidden="true">
+        {/* Mascot 5: Pink astronaut floating near KERUBIM title */}
+        <div className="hero__mascot hero__mascot--pink">
+          <img
+            src="/assets/mascot-portofolio/mascot5.png"
+            alt="Mascot Astronaut Pink"
+            className="hero__mascot-img"
+          />
+        </div>
+
+        {/* Mascot 3: UFO alien octopus hovering in upper right sky */}
+        <div className="hero__mascot hero__mascot--ufo">
+          <img
+            src="/assets/mascot-portofolio/mascot3.png"
+            alt="Mascot UFO Octopus"
+            className="hero__mascot-img"
+          />
+        </div>
+      </div>
+
       <div className="hero__content container">
         <div className="hero__main">
           <h1 className="hero__title">KERUBIM</h1>

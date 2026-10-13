@@ -437,15 +437,12 @@ video {
 .hero__poster,
 .hero__canvas {
   position: absolute;
-  top: 50px;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: calc(100% - 50px);
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 45px, black 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 45px, black 100%);
 }
 
 .hero__video {
@@ -466,10 +463,81 @@ video {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 55%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 55%),
     linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 40%);
+}
+
+/* ==========================================================================
+   Hero Mascots Layer (between hero.mp4 and KERUBIM text)
+   ========================================================================== */
+
+.hero__mascots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hero__mascot {
+  position: absolute;
+  pointer-events: auto;
+  user-select: none;
+  will-change: transform;
+}
+
+.hero__mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero__mascot-img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Mascot 5: Pink floating astronaut positioned behind/near KERUBIM */
+.hero__mascot--pink {
+  bottom: clamp(170px, 32vh, 310px);
+  left: clamp(24px, 11vw, 200px);
+  width: clamp(120px, 15vw, 210px);
+  animation: float-pink 6s ease-in-out infinite alternate;
+}
+
+/* Mascot 3: UFO alien octopus hovering in upper right sky */
+.hero__mascot--ufo {
+  top: clamp(90px, 18vh, 180px);
+  right: clamp(20px, 7vw, 120px);
+  width: clamp(110px, 13vw, 190px);
+  animation: float-ufo 7s ease-in-out infinite alternate;
+}
+
+@keyframes float-pink {
+  0% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+@keyframes float-ufo {
+  0% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(1deg);
+  }
 }
 
 .hero__content {
