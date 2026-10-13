@@ -61,7 +61,7 @@ export default function Hero() {
     <section className="hero" id="hero">
       {/* Placeholder image shown while video is loading */}
       <img
-        src="/assets/lazyhero.jpg"
+        src="/assets/lazyhero.webp"
         alt="Hero Visual"
         className={`hero__poster ${isVideoLoaded ? "is-hidden" : ""}`}
         fetchPriority="high"
@@ -72,8 +72,7 @@ export default function Hero() {
       <video
         ref={videoRef}
         className="hero__video"
-        src="/assets/hero.mp4"
-        poster="/assets/lazyhero.jpg"
+        poster="/assets/lazyhero.webp"
         autoPlay
         loop
         muted
@@ -81,7 +80,10 @@ export default function Hero() {
         preload="auto"
         aria-hidden="true"
         onPlaying={() => setIsVideoLoaded(true)}
-      />
+      >
+        <source src="/assets/hero.webm" type="video/webm" />
+        <source src="/assets/hero.mp4" type="video/mp4" />
+      </video>
 
       <div className="hero__shade" aria-hidden="true"></div>
 
@@ -90,7 +92,7 @@ export default function Hero() {
         {/* Mascot 5: Pink astronaut floating near KERUBIM title */}
         <div className="hero__mascot hero__mascot--pink">
           <img
-            src="/assets/mascot-portofolio/mascot5.png"
+            src="/assets/mascot-portofolio/mascot5.webp"
             alt="Mascot Astronaut Pink"
             className="hero__mascot-img"
           />
@@ -99,7 +101,7 @@ export default function Hero() {
         {/* Mascot 3: UFO alien octopus hovering in upper right sky */}
         <div className="hero__mascot hero__mascot--ufo">
           <img
-            src="/assets/mascot-portofolio/mascot3.png"
+            src="/assets/mascot-portofolio/mascot3.webp"
             alt="Mascot UFO Octopus"
             className="hero__mascot-img"
           />

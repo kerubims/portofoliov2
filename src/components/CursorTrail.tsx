@@ -12,7 +12,7 @@ export default function CursorTrail() {
     const SPACING = 90; // px of pointer travel between images
     const LIFETIME = 1150; // ms each image lives (pop 260 → hold → shrink 450)
     const TRAIL_MAX_PER_MOVE = 6;
-    const TRAIL_IMAGES = [1, 2, 3, 4].map((n) => `/assets/trail/c${n}.png`);
+    const TRAIL_IMAGES = [1, 2, 3, 4].map((n) => `/assets/trail/c${n}.webp`);
 
     TRAIL_IMAGES.forEach((src) => {
       const img = new Image();
