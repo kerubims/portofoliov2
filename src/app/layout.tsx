@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://ksm.web.id/",
   },
   openGraph: {
     type: "website",
@@ -62,10 +62,18 @@ export const metadata: Metadata = {
       "Kerubim SM adalah Full Stack Web Developer asal Indonesia berfokus pada aplikasi web modern, performa tinggi, dan digital experiences.",
     images: [
       {
-        url: "/assets/lazyhero.webp",
+        url: "/assets/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Kerubim SM — Web Developer Portfolio Visual",
+        type: "image/jpeg",
+      },
+      {
+        url: "/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kerubim SM — Web Developer Portfolio Visual",
+        type: "image/webp",
       },
     ],
   },
@@ -74,7 +82,7 @@ export const metadata: Metadata = {
     title: "Kerubim SM — Full Stack Web Developer",
     description:
       "Full Stack Web Developer & Software Engineer crafting high-performance web applications and digital experiences.",
-    images: ["/assets/lazyhero.webp"],
+    images: ["/assets/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -114,7 +122,7 @@ export default function RootLayout({
       identifier: "kerubims",
       description:
         "Portofolio resmi Kerubim SM, Full Stack Web Developer & Software Engineer asal Malang, Indonesia yang berfokus pada aplikasi web performa tinggi, Next.js, dan Laravel.",
-      image: "https://ksm.web.id/assets/lazyhero.webp",
+      image: "https://ksm.web.id/assets/og-image.jpg",
       jobTitle: "Full Stack Web Developer & Software Engineer",
       url: "https://ksm.web.id",
       worksFor: {
@@ -187,6 +195,7 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLdProfilePage).replace(/</g, "\\u003c"),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

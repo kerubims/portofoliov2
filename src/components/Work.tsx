@@ -19,7 +19,7 @@ export default function Work() {
 
     if (!work || !workTrack || !workProgress) return;
 
-    // Play video seamlessly when user is in the Work section
+    // Play video seamlessly when user approaches or is in the Work section
     const observer = new IntersectionObserver(
       ([entry]) => {
         const inView = entry.isIntersecting;
@@ -33,7 +33,7 @@ export default function Work() {
           video.pause();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "200px 0px" }
     );
     observer.observe(work);
 
@@ -113,11 +113,10 @@ export default function Work() {
                 ref={videoRef}
                 className="work__mascot-video"
                 poster="/assets/video-maskot-transparan/section-work1-poster.webp"
-                autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               >
                 <source src="/assets/video-maskot-transparan/section-work-loop.webm" type="video/webm" />
               </video>

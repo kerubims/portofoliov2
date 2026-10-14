@@ -111,6 +111,8 @@ export default function Hero() {
           <img
             src="/assets/mascot-portofolio/mascot5.webp"
             alt="Mascot Astronaut Pink"
+            width={567}
+            height={804}
             className="hero__mascot-img"
             loading="lazy"
             decoding="async"
@@ -122,6 +124,8 @@ export default function Hero() {
           <img
             src="/assets/mascot-portofolio/mascot3.webp"
             alt="Mascot UFO Octopus"
+            width={567}
+            height={804}
             className="hero__mascot-img"
             loading="lazy"
             decoding="async"

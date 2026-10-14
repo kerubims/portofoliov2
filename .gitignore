@@ -50,3 +50,15 @@ next-env.d.ts
 /fix-interactivity.js
 /import-tailwind.js
 /detail-example.html
+
+# reports & audits
+/qa-report-ksm-web-id.md
+qa-report*.md
+/playwright-report/
+/test-results/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
