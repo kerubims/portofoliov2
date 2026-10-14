@@ -79,6 +79,7 @@ export default function ProjectFeatureGallery({ features, themeColor }: ProjectF
                   key={activeFeature.image} // Force re-render for animation if needed
                   src={activeFeature.image} 
                   alt={activeFeature.title} 
+                  decoding="async"
                   className="w-full h-auto max-h-full object-contain object-top rounded-xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
                 />
               </button>
@@ -104,7 +105,13 @@ export default function ProjectFeatureGallery({ features, themeColor }: ProjectF
               >
                 {feature.image ? (
                   <>
-                    <img src={feature.image} alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
+                    <img 
+                      src={feature.image} 
+                      alt="" 
+                      loading="lazy" 
+                      decoding="async" 
+                      className="absolute inset-0 w-full h-full object-cover object-top" 
+                    />
                     <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`}></div>
                   </>
                 ) : (
@@ -139,6 +146,8 @@ export default function ProjectFeatureGallery({ features, themeColor }: ProjectF
             <img 
               src={activeFeature.image} 
               alt={activeFeature.title} 
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto rounded-xl block"
             />
           </div>

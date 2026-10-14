@@ -50,7 +50,25 @@ export default function Hero() {
       // in that case, the poster image stays visible gracefully.
     });
 
+    // Pause video playback when out of viewport to free GPU/CPU resources
+    const heroSection = document.getElementById("hero");
+    let observer: IntersectionObserver | null = null;
+    if (heroSection) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) {
+            video.pause();
+          } else {
+            video.play().catch(() => {});
+          }
+        },
+        { threshold: 0.05 }
+      );
+      observer.observe(heroSection);
+    }
+
     return () => {
+      if (observer) observer.disconnect();
       video.removeEventListener("playing", handleReady);
       video.removeEventListener("loadeddata", handleReady);
       video.removeEventListener("canplaythrough", handleReady);
@@ -68,7 +86,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Continuously looping hero video without cursor scrub */}
+      {/* Continuously looping hero video with lightweight metadata preload */}
       <video
         ref={videoRef}
         className="hero__video"
@@ -77,12 +95,11 @@ export default function Hero() {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
         onPlaying={() => setIsVideoLoaded(true)}
       >
-        <source src="/assets/hero.webm" type="video/webm" />
-        <source src="/assets/hero.mp4" type="video/mp4" />
+        <source src="/assets/hero.webm" type="video/webm" />        
       </video>
 
       <div className="hero__shade" aria-hidden="true"></div>
@@ -95,6 +112,8 @@ export default function Hero() {
             src="/assets/mascot-portofolio/mascot5.webp"
             alt="Mascot Astronaut Pink"
             className="hero__mascot-img"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
@@ -104,6 +123,8 @@ export default function Hero() {
             src="/assets/mascot-portofolio/mascot3.webp"
             alt="Mascot UFO Octopus"
             className="hero__mascot-img"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -142,6 +163,21 @@ export default function Hero() {
             </span>
           </div>
         </aside>
+      </div>
+
+      {/* Sitting Fox Astronaut Mascot bridging Home and About with instant transparent poster */}
+      <div className="hero__sitting-mascot" aria-hidden="true">
+        <video
+          className="hero__sitting-mascot-video"
+          poster="/assets/video-maskot-transparan/home-poster.webp"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        >
+          <source src="/assets/video-maskot-transparan/home-transparent.webm" type="video/webm" />
+        </video>
       </div>
 
       <Link className="hero__scroll glass" href="#about" aria-label="Scroll to About">

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -6,13 +7,59 @@ import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
 import ProjectFeatureGallery from "@/components/ProjectFeatureGallery";
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return projects.map((p) => ({
     slug: p.slug,
   }));
 }
 
-export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  const title = `${project.title} — ${project.category}`;
+  const description = `${project.description} Tech stack: ${project.techTags.join(", ")}.`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: `${project.title} — ${project.category} | Kerubim SM`,
+      description,
+      url: `https://ksm.web.id/projects/${project.slug}`,
+      images: [
+        {
+          url: project.thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} screenshot`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Kerubim SM`,
+      description,
+      images: [project.thumbnail],
+    },
+  };
+}
+
+export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
@@ -20,8 +67,29 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
     notFound();
   }
 
+  const jsonLdProject = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    applicationCategory: project.category,
+    operatingSystem: "Web",
+    description: project.description,
+    author: {
+      "@type": "Person",
+      name: "Kerubim Serafim Mahanaim",
+      url: "https://ksm.web.id",
+    },
+    url: `https://ksm.web.id/projects/${project.slug}`,
+    image: `https://ksm.web.id${project.thumbnail}`,
+    keywords: project.techTags.join(", "),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProject) }}
+      />
       <Nav />
       {/* Ambient Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: -1 }}>
@@ -130,7 +198,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                       <div>
                         <div className="aspect-video relative overflow-hidden rounded-xl bg-black/50 mb-4 border border-white/20">
                           {p.thumbnail && (
-                            <img src={p.thumbnail} alt={p.title} className="w-full h-full object-cover object-top opacity-80" />
+                            <img src={p.thumbnail} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover object-top opacity-80" />
                           )}
                         </div>
                         
@@ -164,7 +232,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                     <div>
                       <div className="aspect-video relative overflow-hidden rounded-xl bg-black/80 mb-4 border border-white/5 group-hover:border-white/20 transition-colors">
                         {p.thumbnail && (
-                          <img src={p.thumbnail} alt={p.title} className="w-full h-full object-cover object-top opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                          <img src={p.thumbnail} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover object-top opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
                         )}
                       </div>
                       

@@ -7,17 +7,30 @@ export default function CursorTrail() {
 
   useEffect(() => {
     const trail = trailRef.current;
-    if (!trail) return;
+    // Skip on touch-only mobile devices where cursor trail is unused
+    if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const SPACING = 90; // px of pointer travel between images
     const LIFETIME = 1150; // ms each image lives (pop 260 → hold → shrink 450)
     const TRAIL_MAX_PER_MOVE = 6;
     const TRAIL_IMAGES = [1, 2, 3, 4].map((n) => `/assets/trail/c${n}.webp`);
 
-    TRAIL_IMAGES.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    // Lazy load trail images during idle time or on first mouse movement
+    let isPreloaded = false;
+    const lazyPreload = () => {
+      if (isPreloaded) return;
+      isPreloaded = true;
+      TRAIL_IMAGES.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(lazyPreload, { timeout: 3000 });
+    } else {
+      setTimeout(lazyPreload, 2500);
+    }
 
     let pressed = false;
     let imageIndex = 0;

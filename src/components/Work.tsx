@@ -9,6 +9,8 @@ export default function Work() {
   const workTrackRef = useRef<HTMLDivElement>(null);
   const workProgressRef = useRef<HTMLSpanElement>(null);
   const [current, setCurrent] = useState(1);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isWorkInViewRef = useRef(false);
 
   useEffect(() => {
     const work = workRef.current;
@@ -16,6 +18,24 @@ export default function Work() {
     const workProgress = workProgressRef.current;
 
     if (!work || !workTrack || !workProgress) return;
+
+    // Play video seamlessly when user is in the Work section
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting;
+        isWorkInViewRef.current = inView;
+        const video = videoRef.current;
+        if (!video) return;
+
+        if (inView) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(work);
 
     const cards = Array.from(workTrack.querySelectorAll(".project")) as HTMLElement[];
     let distance = 0;
@@ -68,6 +88,7 @@ export default function Work() {
     measureWork();
 
     return () => {
+      observer.disconnect();
       window.removeEventListener("scroll", updateWork);
       window.removeEventListener("resize", measureWork);
     };
@@ -85,6 +106,22 @@ export default function Work() {
           <div className="work__intro">
             <h2 className="work__title">Selected<br />Projects</h2>
             <p>Scroll to explore a few favourites from the last couple of years.</p>
+
+            {/* Seamless 20s Looping Mascot grounded on the bottom line */}
+            <div className="work__mascot" aria-hidden="true">
+              <video
+                ref={videoRef}
+                className="work__mascot-video"
+                poster="/assets/video-maskot-transparan/section-work1-poster.webp"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              >
+                <source src="/assets/video-maskot-transparan/section-work-loop.webm" type="video/webm" />
+              </video>
+            </div>
           </div>
 
           <div className="work__track" id="workTrack" ref={workTrackRef}>
