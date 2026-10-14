@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Hanken_Grotesk } from "next/font/google";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -175,7 +176,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
         />
       </head>
-      <body className={`${oswald.variable} ${hanken.variable}`}>{children}</body>
+      <body className={`${oswald.variable} ${hanken.variable}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

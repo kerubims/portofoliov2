@@ -651,7 +651,7 @@ video {
 .hero__sitting-mascot {
   position: absolute;
   right: calc(max(var(--gutter), (100% - 1200px) / 2) - 18px);
-  bottom: -10px;
+  bottom: 0px;
   transform: translateY(37%);
   width: clamp(120px, 11.2vw, 150px);
   pointer-events: auto;
@@ -671,6 +671,7 @@ video {
   .hero__sitting-mascot {
     left: 50%;
     right: auto;
+    bottom: -10px;
     transform: translate(-50%, 32%);
     width: clamp(130px, 30vw, 165px);
     pointer-events: none;
