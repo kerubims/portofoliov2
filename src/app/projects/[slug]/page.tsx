@@ -71,8 +71,8 @@ export default async function ProjectDetail({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: project.title,
-    applicationCategory: project.category,
-    operatingSystem: "Web",
+    applicationCategory: "WebApplication",
+    operatingSystem: "Web Browser",
     description: project.description,
     author: {
       "@type": "Person",
@@ -82,13 +82,51 @@ export default async function ProjectDetail({ params }: Props) {
     url: `https://ksm.web.id/projects/${project.slug}`,
     image: `https://ksm.web.id${project.thumbnail}`,
     keywords: project.techTags.join(", "),
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://ksm.web.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects",
+        item: "https://ksm.web.id/#work",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `https://ksm.web.id/projects/${project.slug}`,
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProject) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdProject).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdBreadcrumb).replace(/</g, "\\u003c"),
+        }}
       />
       <Nav />
       {/* Ambient Background Elements */}

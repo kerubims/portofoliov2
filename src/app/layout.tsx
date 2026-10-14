@@ -102,44 +102,52 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLdPerson = {
+  const jsonLdProfilePage = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Kerubim Serafim Mahanaim",
-    alternateName: ["Kerubim SM", "Kerubim"],
-    url: "https://ksm.web.id",
-    image: "https://ksm.web.id/assets/lazyhero.webp",
-    jobTitle: "Full Stack Web Developer & Software Engineer",
-    worksFor: {
-      "@type": "Organization",
-      name: "Freelance / Independent",
+    "@type": "ProfilePage",
+    dateCreated: "2026-01-01T00:00:00+07:00",
+    dateModified: "2026-10-14T00:00:00+07:00",
+    mainEntity: {
+      "@type": "Person",
+      name: "Kerubim Serafim Mahanaim",
+      alternateName: ["Kerubim SM", "Kerubim"],
+      identifier: "kerubims",
+      description:
+        "Portofolio resmi Kerubim SM, Full Stack Web Developer & Software Engineer asal Malang, Indonesia yang berfokus pada aplikasi web performa tinggi, Next.js, dan Laravel.",
+      image: "https://ksm.web.id/assets/lazyhero.webp",
+      jobTitle: "Full Stack Web Developer & Software Engineer",
+      url: "https://ksm.web.id",
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelance / Independent",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Malang",
+        addressRegion: "Jawa Timur",
+        addressCountry: "ID",
+      },
+      sameAs: [
+        "https://github.com/kerubims",
+        "https://www.linkedin.com/in/kerubim-serafim-mahanaim-393a2b24b",
+        "https://instagram.com/ubims_s",
+        "https://wa.me/62882009074648",
+      ],
+      knowsAbout: [
+        "Web Development",
+        "Full Stack Development",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Laravel",
+        "PHP",
+        "Tailwind CSS",
+        "Docker",
+        "RESTful API",
+        "WebSocket",
+        "Artificial Intelligence",
+      ],
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Malang",
-      addressRegion: "Jawa Timur",
-      addressCountry: "ID",
-    },
-    sameAs: [
-      "https://github.com/kerubims",
-      "https://www.linkedin.com/in/kerubim-serafim-mahanaim-393a2b24b",
-      "https://instagram.com/ubims_s",
-      "https://wa.me/62882009074648",
-    ],
-    knowsAbout: [
-      "Web Development",
-      "Full Stack Development",
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Laravel",
-      "PHP",
-      "Tailwind CSS",
-      "Docker",
-      "RESTful API",
-      "WebSocket",
-      "Artificial Intelligence",
-    ],
   };
 
   const jsonLdWebsite = {
@@ -151,6 +159,10 @@ export default function RootLayout({
     inLanguage: ["id-ID", "en-US"],
     description:
       "Portofolio resmi Kerubim SM, Full Stack Web Developer & Software Engineer asal Indonesia yang berfokus pada aplikasi web performa tinggi, Next.js, dan Laravel.",
+    author: {
+      "@type": "Person",
+      name: "Kerubim Serafim Mahanaim",
+    },
   };
 
   return (
@@ -167,16 +179,20 @@ export default function RootLayout({
             vertical-align: middle;
           }
         `}</style>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
-        />
       </head>
       <body className={`${oswald.variable} ${hanken.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdProfilePage).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdWebsite).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <Analytics />
       </body>
