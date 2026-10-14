@@ -118,7 +118,7 @@ export default function Work() {
                 playsInline
                 preload="none"
               >
-                <source src="/assets/video-maskot-transparan/section-work-loop.webm" type="video/webm" />
+                <source src="/assets/video-maskot-transparan/section-work-loop.webm?v=2" type="video/webm" />
               </video>
             </div>
           </div>
