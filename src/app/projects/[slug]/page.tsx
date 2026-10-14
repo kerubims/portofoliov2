@@ -138,7 +138,7 @@ export default async function ProjectDetail({ params }: Props) {
         <div className="container mx-auto px-6 max-w-7xl">
           
           <Link href="/#work" className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity mb-12 uppercase tracking-widest ">
-            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span className="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_back</span>
             BACK TO PROJECTS
           </Link>
 
@@ -242,7 +242,7 @@ export default async function ProjectDetail({ params }: Props) {
                         
                         <div className="flex justify-between items-center text-[10px]  uppercase font-bold text-white border-t border-white/20 pt-3">
                           <span>Active Case Study</span>
-                          <span className="material-symbols-outlined text-[14px]">check_circle</span>
+                          <span className="material-symbols-outlined text-[14px]" aria-hidden="true">check_circle</span>
                         </div>
                       </div>
                   </div>
@@ -276,7 +276,7 @@ export default async function ProjectDetail({ params }: Props) {
                       
                       <div className="flex justify-between items-center text-[10px]  uppercase font-semibold text-white/40 border-t border-white/10 pt-3 group-hover:text-white group-hover:border-white/30 transition-all">
                         <span>Inspect Project</span>
-                        <span className="material-symbols-outlined text-[14px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">arrow_outward</span>
+                        <span className="material-symbols-outlined text-[14px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">arrow_outward</span>
                       </div>
                     </div>
                   </Link>

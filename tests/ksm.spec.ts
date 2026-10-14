@@ -28,11 +28,17 @@ test('homepage: nav anchors scroll to sections', async ({ page }) => {
   }
 });
 
-test('mobile: nav links reachable (regression for missing hamburger)', async ({ page }) => {
+test('mobile: nav links reachable via hamburger', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto(BASE);
-  // Dokumentasi bug QA report: link disembunyikan di <=639px jika belum ada hamburger
-  await expect(page.getByRole('link', { name: 'Work', exact: true })).toBeVisible();
+  await page.goto(`${BASE}/`);
+  const menuButton = page.getByRole('button', { name: /menu/i });
+  await expect(menuButton).toBeVisible();
+  await menuButton.click();
+  for (const label of ['About', 'Work', 'Words']) {
+    await expect(page.getByRole('link', { name: label, exact: true })).toBeVisible();
+  }
+  await page.getByRole('link', { name: 'Work', exact: true }).click();
+  await expect(page.locator('#work')).toBeInViewport();
 });
 
 test('work carousel: counter and progress advance', async ({ page }) => {
