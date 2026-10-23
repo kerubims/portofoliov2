@@ -1072,9 +1072,59 @@ video {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.project__year {
-  font-size: 0.9rem;
-  letter-spacing: 0.14em;
+/* ---- Info bar: button-style hover (sweep + shine + arrow nudge) ---- */
+.project__info {
+  overflow: hidden;
+}
+
+/* Sweep layer (mirrors .btn::before) — overrides the glass sheen */
+.project__info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: -1;
+  mix-blend-mode: normal;
+  pointer-events: none;
+}
+
+/* Shine sweep (mirrors .btn::after) */
+.project__info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: translate(-160%) skew(-14deg);
+  transition: transform 0s;
+  pointer-events: none;
+}
+
+.project:hover .project__info::before {
+  transform: translateX(0);
+}
+
+.project:hover .project__info::after {
+  /* Wait 0.25s for sweep to almost finish before shining */
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+  transform: translate(320%) skew(-14deg);
+}
+
+.project__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.project:hover .project__arrow {
+  transform: translateX(4px);
 }
 
 /* ---- Artwork ---- */
