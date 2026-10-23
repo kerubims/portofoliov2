@@ -134,7 +134,7 @@ export default function Work() {
                       <h3 className="project__title">{project.title}</h3>
                       <p className="project__cat">{project.category} · {project.status}</p>
                     </div>
-                    <span className="project__arrow" aria-hidden="true"><svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    <span className="project__arrow" aria-hidden="true"><svg width="1.8em" height="1.8em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                   </div>
                 </article>
               </Link>
