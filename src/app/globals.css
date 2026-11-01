@@ -1680,6 +1680,11 @@ video {
     min-width: 0;
   }
 
+  .project-more {
+    width: 100%;
+    min-width: 0;
+  }
+
   .work__progress {
     display: none;
   }
