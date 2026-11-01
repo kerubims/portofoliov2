@@ -1131,8 +1131,10 @@ video {
 .project-more {
   position: relative;
   flex: none;
-  width: min(560px, 82vw);
-  border-radius: 22px;
+  width: max-content;
+  max-width: min(560px, 82vw);
+  height: min(62vh, 560px);
+  border-radius: 32px;
   overflow: hidden;
   isolation: isolate;
   color: var(--white);
@@ -1683,6 +1685,7 @@ video {
   .project-more {
     width: 100%;
     min-width: 0;
+    height: auto;
   }
 
   .work__progress {
