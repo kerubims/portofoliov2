@@ -1127,21 +1127,21 @@ video {
   transform: translateX(4px);
 }
 
-/* ---- See All Projects card (end of track, not counted as a project) ---- */
+/* ---- See All Projects strip (end of track, not counted as a project) ---- */
 .project-more {
   position: relative;
   flex: none;
   width: min(560px, 82vw);
-  height: min(62vh, 560px);
-  border-radius: 32px;
+  border-radius: 22px;
   overflow: hidden;
   isolation: isolate;
   color: var(--white);
   background: var(--ink);
-  flex-direction: column;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
   text-decoration: none;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   transition:
@@ -1169,21 +1169,23 @@ video {
   transform: translateX(0);
 }
 
-.project-more__label {
+.project-more__text {
   position: relative;
   z-index: 1;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-more__label {
+  font-size: 1.15rem;
   font-weight: 700;
-  line-height: 0.95;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .project-more__count {
-  position: relative;
-  z-index: 1;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 0.14em;
   text-transform: uppercase;
