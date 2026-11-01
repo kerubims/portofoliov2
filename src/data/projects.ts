@@ -18,6 +18,7 @@ export type Project = {
   thumbnail: string; // Path ke screenshot utama
   logo?: string; // Path ke logo asli project
   art?: string; // Path ke ilustrasi 3D abstrak
+  featured?: boolean; // false = halaman detail tetap ada, tapi card disembunyikan dari Selected Projects
 };
 
 export const projects: Project[] = [
@@ -290,4 +291,56 @@ export const projects: Project[] = [
       }
     ]
   },
+  {
+    slug: "vespabox",
+    title: "VespaBox",
+    category: "Realtime",
+    status: "BETA",
+    statusTone: "amber",
+    themeColor: "#ef4444", // Red
+    thumbnail: "/assets/projects/vespabox.webp",
+    description:
+      "Vespa spare parts marketplace with real-time bidding. Laravel Reverb WebSocket, broadcasting channels, tested by thousands of users.",
+    techTags: ["Laravel 11", "Reverb", "WebSocket"],
+    liveUrl: "https://vespabox.ksm.web.id/",
+    featured: false,
+    features: [
+      {
+        title: "Homepage",
+        description: "Main landing page for the workshop. Introduces Vespa service offerings and directs visitors to book a service or browse the spare parts catalog.",
+        image: "/assets/projects/vespabox/01-beranda.webp"
+      },
+      {
+        title: "Spare Parts Catalog",
+        description: "Vespa spare parts shopping page. Visitors can search, filter, and add products to their cart.",
+        image: "/assets/projects/vespabox/02-katalog.webp"
+      },
+      {
+        title: "Login",
+        description: "Login page for customers to manage their service bookings.",
+        image: "/assets/projects/vespabox/03-masuk.webp"
+      },
+      {
+        title: "Service History",
+        description: "Personal history page to monitor all service bookings and history for the logged-in customer.",
+        image: "/assets/projects/vespabox/04-riwayat-servis.webp"
+      },
+      {
+        title: "Live Queue",
+        description: "Live Queue page to view the list of ongoing service queues at the workshop today.",
+        image: "/assets/projects/vespabox/05-antrean-langsung.webp"
+      },
+      {
+        title: "Book Service",
+        description: "Service scheduling form where customers enter vehicle data and choose a date for their service booking.",
+        image: "/assets/projects/vespabox/06-pesan-servis.webp"
+      },
+      {
+        title: "My Profile",
+        description: "Profile page to manage account information and security settings.",
+        image: "/assets/projects/vespabox/07-profil-saya.webp"
+      }
+    ]
+  }
 ];
+

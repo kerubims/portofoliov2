@@ -5,6 +5,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function Work() {
+  const selectedProjects = projects.filter((p) => p.featured !== false);
   const workRef = useRef<HTMLElement>(null);
   const workTrackRef = useRef<HTMLDivElement>(null);
   const workProgressRef = useRef<HTMLSpanElement>(null);
@@ -99,7 +100,7 @@ export default function Work() {
       <div className="work__sticky">
         <div className="work__head container">
           <p className="eyebrow">(02) Selected Work</p>
-          <p className="work__counter"><span>{String(current).padStart(2, "0")}</span> / 05</p>
+          <p className="work__counter"><span>{String(current).padStart(2, "0")}</span> / {String(selectedProjects.length).padStart(2, "0")}</p>
         </div>
 
         <div className="work__content">
@@ -124,7 +125,7 @@ export default function Work() {
           </div>
 
           <div className="work__track" id="workTrack" ref={workTrackRef}>
-            {projects.map((project, index) => (
+            {selectedProjects.map((project, index) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className={`project project--${project.slug}`} style={{ display: "block" }}>
                 <article>
                   <div className="project__art"></div>
@@ -139,6 +140,11 @@ export default function Work() {
                 </article>
               </Link>
             ))}
+            <Link href="/projects" className="project-more" style={{ display: "flex" }}>
+              <span className="project-more__label">See All<br />Projects</span>
+              <span className="project-more__count">{projects.length} projects</span>
+              <span className="project-more__arrow" aria-hidden="true"><svg width="1.8em" height="1.8em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </Link>
           </div>
         </div>
 
