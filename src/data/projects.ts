@@ -216,6 +216,41 @@ export const projects: Project[] = [
     ]
   },
   {
+    slug: "funcoku",
+    title: "Funcoku",
+    category: "EdTech",
+    status: "LIVE",
+    statusTone: "green",
+    themeColor: "#c8603a", // Terracotta
+    thumbnail: "/assets/projects/funcoku.webp",
+    description:
+      "Interactive coding-learning platform in Indonesian: learn from zero with a Monaco editor and live browser preview, a Semantic AST Judge that grades DOM structure instead of rigid regex, and a 3-level AI Debugging Mentor.",
+    techTags: ["Next.js", "Monaco Editor", "Drizzle ORM"],
+    liveUrl: "https://funcoku.ksm.web.id",
+    features: [
+      {
+        title: "Belajar dari Nol",
+        description: "Structured curriculum in Indonesian for absolute beginners: HTML & CSS Basics, JavaScript DOM & Logic, Modern Tailwind CSS, and Git & GitHub PR Workflow.",
+        image: "/assets/projects/funcoku/01-belajar-dari-nol.webp"
+      },
+      {
+        title: "AI Debugging Mentor",
+        description: "Three-level guidance — Concept, Syntax Pattern, Solution — that teaches debugging instead of handing out the answer.",
+        image: "/assets/projects/funcoku/02-mentor-ai.webp"
+      },
+      {
+        title: "Belajar dari HP",
+        description: "Mobile-friendly learning with a Quick-Symbol Bar, so students can code comfortably from their phones.",
+        image: "/assets/projects/funcoku/03-mobile.webp"
+      },
+      {
+        title: "Struk Kelulusan",
+        description: "A tactile paper-craft graduation receipt with a unique verification barcode — proof of completion you can actually hold.",
+        image: "/assets/projects/funcoku/04-struk-kelulusan.webp"
+      }
+    ]
+  },
+  {
     slug: "sebatas-kopi",
     title: "SebatasKopi",
     category: "POS / SMB",
@@ -255,54 +290,4 @@ export const projects: Project[] = [
       }
     ]
   },
-  {
-    slug: "vespabox",
-    title: "VespaBox",
-    category: "Realtime",
-    status: "BETA",
-    statusTone: "amber",
-    themeColor: "#ef4444", // Red
-    thumbnail: "/assets/projects/vespabox.webp",
-    description:
-      "Vespa spare parts marketplace with real-time bidding. Laravel Reverb WebSocket, broadcasting channels, tested by thousands of users.",
-    techTags: ["Laravel 11", "Reverb", "WebSocket"],
-    liveUrl: "https://vespabox.ksm.web.id/",
-    features: [
-      {
-        title: "Homepage",
-        description: "Main landing page for the workshop. Introduces Vespa service offerings and directs visitors to book a service or browse the spare parts catalog.",
-        image: "/assets/projects/vespabox/01-beranda.webp"
-      },
-      {
-        title: "Spare Parts Catalog",
-        description: "Vespa spare parts shopping page. Visitors can search, filter, and add products to their cart.",
-        image: "/assets/projects/vespabox/02-katalog.webp"
-      },
-      {
-        title: "Login",
-        description: "Login page for customers to manage their service bookings.",
-        image: "/assets/projects/vespabox/03-masuk.webp"
-      },
-      {
-        title: "Service History",
-        description: "Personal history page to monitor all service bookings and history for the logged-in customer.",
-        image: "/assets/projects/vespabox/04-riwayat-servis.webp"
-      },
-      {
-        title: "Live Queue",
-        description: "Live Queue page to view the list of ongoing service queues at the workshop today.",
-        image: "/assets/projects/vespabox/05-antrean-langsung.webp"
-      },
-      {
-        title: "Book Service",
-        description: "Service scheduling form where customers enter vehicle data and choose a date for their service booking.",
-        image: "/assets/projects/vespabox/06-pesan-servis.webp"
-      },
-      {
-        title: "My Profile",
-        description: "Profile page to manage account information and security settings.",
-        image: "/assets/projects/vespabox/07-profil-saya.webp"
-      }
-    ]
-  }
 ];

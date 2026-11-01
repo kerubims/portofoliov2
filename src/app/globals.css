@@ -1150,6 +1150,13 @@ video {
     linear-gradient(160deg, #4c1d95, #2e1065);
 }
 
+.project--funcoku .project__art {
+  background:
+    radial-gradient(circle at 78% 28%, rgba(240, 138, 93, 0.55), transparent 45%),
+    radial-gradient(circle at 18% 72%, rgba(47, 111, 106, 0.65), transparent 50%),
+    linear-gradient(135deg, #a34a28 0%, #5f2712 100%);
+}
+
 .project--sebatas-kopi .project__art {
   background:
     radial-gradient(circle at 68% 40%, #ffd98a 0 16%, rgba(255, 190, 90, 0.55) 16.5%, transparent 34%),
