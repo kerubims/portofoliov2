@@ -1181,8 +1181,8 @@ video {
 
 .project-more__label {
   font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1195,7 +1195,9 @@ video {
 }
 
 .project-more__arrow {
-  position: relative;
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
   z-index: 1;
   display: inline-flex;
   align-items: center;
