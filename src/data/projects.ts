@@ -240,11 +240,6 @@ export const projects: Project[] = [
         image: "/assets/projects/funcoku/02-mentor-ai.webp"
       },
       {
-        title: "Belajar dari HP",
-        description: "Mobile-friendly learning with a Quick-Symbol Bar, so students can code comfortably from their phones.",
-        image: "/assets/projects/funcoku/03-mobile.webp"
-      },
-      {
         title: "Struk Kelulusan",
         description: "A tactile paper-craft graduation receipt with a unique verification barcode — proof of completion you can actually hold.",
         image: "/assets/projects/funcoku/04-struk-kelulusan.webp"
