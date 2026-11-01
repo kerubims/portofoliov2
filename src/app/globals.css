@@ -1142,8 +1142,8 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 22px;
+  gap: 20px;
+  padding: clamp(28px, 3.5vw, 40px) clamp(32px, 4vw, 48px);
   text-decoration: none;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   transition:
@@ -1176,18 +1176,19 @@ video {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
 }
 
 .project-more__label {
-  font-size: 1.4rem;
+  font-size: clamp(2.4rem, 3.5vw, 3.4rem);
   font-weight: 600;
+  line-height: 1.05;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .project-more__count {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1196,8 +1197,8 @@ video {
 
 .project-more__arrow {
   position: absolute;
-  right: 22px;
-  bottom: 22px;
+  right: 28px;
+  bottom: 28px;
   z-index: 1;
   display: inline-flex;
   align-items: center;
@@ -1686,8 +1687,31 @@ video {
 
   .project-more {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
     height: auto;
+    min-height: auto;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .project-more__label {
+    font-size: clamp(1.4rem, 5.2vw, 1.85rem);
+    white-space: nowrap;
+  }
+
+  .project-more__label br {
+    display: none;
+  }
+
+  .project-more__arrow {
+    position: static;
+    right: auto;
+    bottom: auto;
+    flex-shrink: 0;
   }
 
   .work__progress {

@@ -156,7 +156,7 @@ export default function Hero() {
 
         <aside className="hero__stats">
           <div className="stat glass">
-            <span className="stat__value">120</span>
+            <span className="stat__value">24+</span>
             <span className="stat__label">Projects shipped</span>
           </div>
           <div className="stat glass">

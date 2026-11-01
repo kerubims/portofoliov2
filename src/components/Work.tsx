@@ -142,7 +142,7 @@ export default function Work() {
             ))}
             <Link href="/projects" className="project-more">
               <span className="project-more__text">
-                <span className="project-more__label">See All Projects</span>
+                <span className="project-more__label">See <br /> All <span className="outline">project</span></span>
                 <span className="project-more__count">{projects.length} projects</span>
               </span>
               <span className="project-more__arrow" aria-hidden="true"><svg width="1.8em" height="1.8em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
