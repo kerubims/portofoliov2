@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     template: "%s | Kerubim SM",
   },
   description:
-    "Kerubim SM (Kerubim Serafim Mahanaim) adalah Full Stack Web Developer & Software Engineer asal Malang, Indonesia. Membangun aplikasi web modern berkinerja tinggi dengan Next.js, React, Laravel, dan AI integration.",
+    "Kerubim SM (Kerubim Serafim Mahanaim) is a Full Stack Web Developer & Software Engineer from Malang, Indonesia. He builds high-performance modern web applications with Next.js, React, Laravel, and AI integration.",
   keywords: [
     "Kerubim SM",
     "Kerubim Serafim Mahanaim",
     "Kerubim",
     "ksm.web.id",
-    "Web Developer Indonesia",
-    "Full Stack Developer Malang",
-    "Portfolio Web Developer",
-    "Software Engineer Indonesia",
-    "Next.js Developer Indonesia",
-    "Laravel Developer Indonesia",
-    "Jasa Pembuatan Website Malang",
-    "Jasa Web Developer",
+    "Web Developer",
+    "Full Stack Developer",
+    "Web Developer Portfolio",
+    "Software Engineer",
+    "Next.js Developer",
+    "Laravel Developer",
+    "Website Development Services",
+    "Web Developer Services",
     "SIM-KERMA",
     "CVKu",
     "Poltek Sendawar",
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "id_ID",
-    alternateLocale: ["en_US"],
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     url: "https://ksm.web.id",
     siteName: "Kerubim SM Portfolio",
     title: "Kerubim SM — Full Stack Web Developer & Software Engineer",
     description:
-      "Kerubim SM adalah Full Stack Web Developer asal Indonesia berfokus pada aplikasi web modern, performa tinggi, dan digital experiences.",
+      "Kerubim SM is a Full Stack Web Developer from Indonesia focused on modern, high-performance web applications and digital experiences.",
     images: [
       {
         url: "/assets/og-image.jpg",
@@ -121,7 +121,7 @@ export default function RootLayout({
       alternateName: ["Kerubim SM", "Kerubim"],
       identifier: "kerubims",
       description:
-        "Portofolio resmi Kerubim SM, Full Stack Web Developer & Software Engineer asal Malang, Indonesia yang berfokus pada aplikasi web performa tinggi, Next.js, dan Laravel.",
+        "Official portfolio of Kerubim SM, Full Stack Web Developer & Software Engineer from Malang, Indonesia, focused on high-performance web applications, Next.js, and Laravel.",
       image: "https://ksm.web.id/assets/og-image.jpg",
       jobTitle: "Full Stack Web Developer & Software Engineer",
       url: "https://ksm.web.id",
@@ -164,9 +164,9 @@ export default function RootLayout({
     name: "Kerubim SM — Web Developer Portfolio",
     alternateName: "ksm.web.id",
     url: "https://ksm.web.id",
-    inLanguage: ["id-ID", "en-US"],
+    inLanguage: ["en-US", "id-ID"],
     description:
-      "Portofolio resmi Kerubim SM, Full Stack Web Developer & Software Engineer asal Indonesia yang berfokus pada aplikasi web performa tinggi, Next.js, dan Laravel.",
+      "Official portfolio of Kerubim SM, Full Stack Web Developer & Software Engineer from Indonesia, focused on high-performance web applications, Next.js, and Laravel.",
     author: {
       "@type": "Person",
       name: "Kerubim Serafim Mahanaim",
@@ -174,7 +174,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="id">
+    <html lang="en">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

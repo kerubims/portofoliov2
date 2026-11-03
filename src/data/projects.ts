@@ -230,7 +230,7 @@ export const projects: Project[] = [
     liveUrl: "https://funcoku.ksm.web.id",
     features: [
       {
-        title: "Belajar dari Nol",
+        title: "Learn from Zero",
         description: "Structured curriculum in Indonesian for absolute beginners: HTML & CSS Basics, JavaScript DOM & Logic, Modern Tailwind CSS, and Git & GitHub PR Workflow.",
         image: "/assets/projects/funcoku/01-belajar-dari-nol.webp"
       },
@@ -240,7 +240,7 @@ export const projects: Project[] = [
         image: "/assets/projects/funcoku/02-mentor-ai.webp"
       },
       {
-        title: "Struk Kelulusan",
+        title: "Graduation Receipt",
         description: "A tactile paper-craft graduation receipt with a unique verification barcode — proof of completion you can actually hold.",
         image: "/assets/projects/funcoku/04-struk-kelulusan.webp"
       }
@@ -352,7 +352,7 @@ export const projects: Project[] = [
     featured: false,
     features: [
       {
-        title: "Beranda",
+        title: "Homepage",
         description: "Homepage with a 3D product carousel, service highlights, and direct WhatsApp ordering.",
         image: "/assets/projects/cetak-kilat-indonesia/01-beranda.webp"
       },
