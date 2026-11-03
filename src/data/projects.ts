@@ -336,6 +336,37 @@ export const projects: Project[] = [
         image: "/assets/projects/vespabox/07-profil-saya.webp"
       }
     ]
+  },
+  {
+    slug: "cetak-kilat-indonesia",
+    title: "Cetak Kilat Indonesia",
+    category: "Company Profile",
+    status: "LIVE",
+    statusTone: "green",
+    themeColor: "#101a3a", // Navy (brand ink)
+    thumbnail: "/assets/projects/cetak-kilat-indonesia.webp",
+    description:
+      "Company profile and product catalog for a Jakarta printing service: premium DTF printing, custom apparel, and uniforms — with transparent starting prices and direct ordering via WhatsApp and email.",
+    techTags: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://www.cetakkilatindonesia.com/",
+    featured: false,
+    features: [
+      {
+        title: "Beranda",
+        description: "Homepage with a 3D product carousel, service highlights, and direct WhatsApp ordering.",
+        image: "/assets/projects/cetak-kilat-indonesia/01-beranda.webp"
+      },
+      {
+        title: "Katalog Produk",
+        description: "Full product catalog — t-shirts, tote bags, office jackets, uniforms, and hoodies — each opening a pre-filled WhatsApp order chat.",
+        image: "/assets/projects/cetak-kilat-indonesia/02-katalog.webp"
+      },
+      {
+        title: "Detail Produk",
+        description: "Product detail pages explaining the print quality — sharp detail, anti-crack, durable color — with direct WhatsApp ordering.",
+        image: "/assets/projects/cetak-kilat-indonesia/03-detail-produk.webp"
+      }
+    ]
   }
 ];
 
